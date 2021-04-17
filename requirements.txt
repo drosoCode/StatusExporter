@@ -1,0 +1,7 @@
+bs4
+requests
+xmltodict
+prometheus_client
+pyyaml
+croniter
+playwright
