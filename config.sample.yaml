@@ -1,0 +1,16 @@
+sources:
+  psn:
+  github:
+  cloudflare:
+  python:
+  reddit:
+  discord:
+  steam:
+  twitch:
+  npm:
+  office:
+  docker:
+  google:
+system:
+  port: 8000
+  cron: "*/10 * * * *"
