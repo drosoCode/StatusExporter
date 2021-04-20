@@ -19,10 +19,18 @@ def getData(sources):
     data = {}
     for s in sources:
         print(s[0])
-        if s[1] is not None:
-            data.update(s[0].getMetrics(**s[1]))
-        else:
-            data.update(s[0].getMetrics())
+        newData = {}
+        try:
+            if s[1] is not None:
+                newData = s[0].getMetrics(**s[1])
+            else:
+                newData = s[0].getMetrics()
+        except:
+            if len(data) > 0:
+                k = list(data.keys())[0]
+                baseName = k[0 : k.find("_")]
+                newData[baseName + "_global"] = 2  # set as error
+        data.update(newData)
     return data
 
 
